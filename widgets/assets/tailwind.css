@@ -1,0 +1,101 @@
+/* import tailwind and make it scan `@source` path(s) for tailwind classes */
+@import 'tailwindcss';
+@source "../";
+
+/* import Flowbite Vue styles */
+@import "flowbite-vue/index.css";
+@import "flowbite/src/themes/default";
+
+/* import Flowbite plugin */
+/* @plugin "flowbite/plugin"; */
+@plugin "@tailwindcss/typography";
+
+/* add Flowbite Vue directory using @source directive */
+@source "@/node_modules/flowbite-vue";
+
+@theme {
+    /* --color-primary-50: #eef8ff;
+    --color-primary-100: #dcf1ff;
+    --color-primary-200: #b2e0ff;
+    --color-primary-300: #6dc5ff;
+    --color-primary-400: #20a6ff;
+    --color-primary-500: #0099ff;
+    --color-primary-600: #0086df;
+    --color-primary-700: #006cb4;
+    --color-primary-800: #005995;
+    --color-primary-900: #00497a;
+    --color-primary-950: #001828; */
+
+    /* --color-primary-50: #eff8ff;
+    --color-primary-100: #dfefff;
+    --color-primary-200: #b8e0ff;
+    --color-primary-300: #78c9ff;
+    --color-primary-400: #20a6ff;
+    --color-primary-500: #0692f1;
+    --color-primary-600: #0073ce;
+    --color-primary-700: #005ca7;
+    --color-primary-800: #024e8a;
+    --color-primary-900: #084172;
+    --color-primary-950: #06294b; */
+
+    /* mariner */
+    /* --color-primary-50: #f1f8fd;
+    --color-primary-100: #e0eef9;
+    --color-primary-200: #c8e2f5;
+    --color-primary-300: #a2d1ee;
+    --color-primary-400: #76b6e4;
+    --color-primary-500: #559bdc;
+    --color-primary-600: #4181cf;
+    --color-primary-700: #366bba;
+    --color-primary-800: #325a9b;
+    --color-primary-900: #2d4c7b;
+    --color-primary-950: #20304b; */
+
+    /* San Marino (500)*/
+    --color-primary-50: #f4f6fb;
+    --color-primary-100: #e8ecf6;
+    --color-primary-200: #cbd8ec;
+    --color-primary-300: #9db6dc;
+    --color-primary-400: #688fc8;
+    --color-primary-500: #4069a5;
+    --color-primary-600: #345895;
+    --color-primary-700: #2b4779;
+    --color-primary-800: #273d65;
+    --color-primary-900: #253555;
+    --color-primary-950: #182339;
+
+    /* Danube (500) */
+    /* --color-primary-50: #f3f6fb;
+    --color-primary-100: #e4ebf5;
+    --color-primary-200: #cedeef;
+    --color-primary-300: #adc7e3;
+    --color-primary-400: #86abd4;
+    --color-primary-500: #688fc8;
+    --color-primary-600: #5578bb;
+    --color-primary-700: #4b67aa;
+    --color-primary-800: #41558c;
+    --color-primary-900: #384870;
+    --color-primary-950: #262e45; */
+}
+
+/* darkmode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* animation when toggling checkboxes */
+input[type="checkbox"] {
+    @apply relative bg-none;
+
+    &::after {
+        content: '';
+        @apply duration-400 block absolute top-1/2 left-1/2 z-10 w-full h-full bg-current opacity-0 transition-all ease-in-out transform scale-0 -translate-x-1/2 -translate-y-1/2 pointer-events-none;
+
+        mask-size: 120%;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    }
+
+    &:checked::after {
+        @apply duration-400 opacity-100 transition-all ease-in-out scale-100 pointer-events-none;
+    }
+} 
