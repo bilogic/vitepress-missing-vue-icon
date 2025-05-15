@@ -2,14 +2,14 @@
     <a href="#" @click="show = false">Hide</a> |
     <a href="#" @click="show = true">Show</a>
     <div class="border border-red-500">
-        <BadIcon class="w-4" v-if="show" />
+        <Icon class="w-4" v-if="show" />
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import BadIcon from "./assets/vitepress.svg";
-// import BadIcon from "./assets/trash.svg";
+import Icon from "./assets/vitepress.svg"; // this icon is bad
+// import Icon from "./assets/trash.svg"; // this icon is good
 const show: boolean = ref<boolean>(true);
 </script>
 
